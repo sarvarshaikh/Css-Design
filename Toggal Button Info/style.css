@@ -1,0 +1,104 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000;
+}
+.card
+{
+	position: relative;
+	width: 300px;
+	height: 400px;
+	background: #262626;
+	overflow: hidden;
+}
+input,
+.toggal
+{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	bottom: 20px;
+	right: 20px;
+	outline: none;
+	z-index: 10;
+}
+input
+{
+	opacity: 0;
+
+}
+.toggal
+{
+	pointer-events: none;
+	border-radius: 50%;
+	background:#fff;
+	transition: 0.5s;
+	text-align: center;
+	line-height: 50px;
+	font-size: 36px;
+	box-shadow: 0 0 0 0px #9c27b0;
+}
+
+input:checked ~ .toggal
+{
+	box-shadow: 0 0 0 500px #9c27b0;
+	transform: rotate(225deg);
+}
+/*input:checked ~ #plus
+{
+	transform: rotate(225deg);
+}*/
+
+.imgBox,
+.details
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+}
+#plus
+{
+	font-size: 25px;
+	z-index: 11;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	bottom: 35px;
+	right: 35px;
+	text-align: center;
+}
+.details
+{
+	padding: 20px;
+	box-sizing: border-box;
+	z-index: 11;
+	pointer-events: none;
+	transition: 0.5s;
+	opacity: 0;
+}
+input:checked ~ .details
+{
+	opacity: 1;
+	transition-delay: 0.5s;
+}
+.details h2
+{
+	margin-bottom: 5px;
+	color: #fff;
+}
+.details p
+{
+	margin:0;
+	padding: 0;
+	color: #fff; 
+	font-family: 'Tangerine', serif;
+	line-height: 1.5;	
+}
